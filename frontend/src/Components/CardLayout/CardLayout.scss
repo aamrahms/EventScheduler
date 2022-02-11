@@ -1,0 +1,23 @@
+// grid layout for event cards
+.cards_container {
+	display: grid;
+    height: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    margin-top: 80px;
+    padding: 40px 20px;
+}
+
+.page_loader {
+	top: 0;
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+	svg{
+		top: 50%;
+		color: #000000;
+		font-size: 50px;
+		position: absolute;
+	}
+}

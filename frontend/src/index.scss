@@ -1,0 +1,27 @@
+@import "tailwindcss/base";
+// @import "../node_modules/custom-base-styles.css";
+
+@import "tailwindcss/components";
+// @import "../node_modules/custom-components.css";
+
+@import "tailwindcss/utilities";
+// @import "../node_modules/custom-utilities.css";
+
+html {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+// common body styles
+body {
+  padding: 0;
+  margin: 0;  
+  height: 100%;
+}
+
+// remove default ul style
+ul {list-style: none;}
+
+// remove default fieldset style
+fieldset {margin: 0;}

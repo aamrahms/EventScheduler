@@ -1,0 +1,163 @@
+@import '../../Utils/Design-Tokens/CommonScssUtil.scss';
+// event card styles with transition
+.card {
+    position: relative;
+    border-radius: 30px;
+    margin: 2%;
+    box-shadow: 0 0 5px 0px $color-white-shade-7;
+    cursor: pointer;
+    min-height: 300px;
+    height: 300px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    transition: height 0.5s ease-in-out;
+    // container for action icons like edit, delete, like, calendar
+    .iconContainer {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        z-index: 20;
+        ._editIcon {
+            margin: 0 5px;
+            font-size: fontSize(medium, m18);
+            color: $color-white-shade-1;
+            // action icon colors
+            &._rsvp {color: $event-rsvp-icon;}
+            &._like {
+                &:hover {
+                    color: $event-heart-icon;
+                }
+            }
+            &._trash {
+                color: $event-trash-icon;
+                &:hover {
+                    color: $event-trash-hover;
+                }
+            }
+            .iconText {
+                font-size: fontSize(small, s14);
+                color: $color-white-shade-1;
+                font-weight: 600;
+                text-shadow: 0 0 5px $color-black-shade-1;
+                margin-left: 5px;
+                &:hover {
+                    color: #cbcbcb;
+                }
+            }
+        }
+        &._left {
+            left: 20px;
+            top: 10px;
+        }
+
+    }
+    // overlay on event card
+    .overlay {
+        height: 100%;
+        border-radius: 30px;
+        background: $color-black-shade-1;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        opacity: 0.3;
+        position: relative;
+        text-align: center;
+        color: $color-white-shade-1;
+        width: 100%;
+    }
+    .cardContent {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        color: $color-white-shade-1;
+        font-weight: 800;
+        text-align: center;
+        padding: 80px 0;
+        width: 100%;
+        // title for event
+        .eventTitle {
+            font-size: fontSize(medium, m18);
+            font-weight: 700;
+            padding: 10px 0;
+            text-shadow: 0 0 5px $color-black-shade-1;
+        }
+        // description of the event
+        .eventDesc {
+            font-weight: 500;
+            padding: 0 10px;
+            font-size: fontSize(small, s13);
+            max-height: 100px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+            margin: 0 30px;
+        }
+        // venue and date
+        .infomation {
+            @include flex-mixin(row, center, center);
+            font-size: fontSize(small, s13);
+            .divider_vertical {
+                width: 1px;
+                height: 14px;
+                background: #d5d5d5;
+                margin: -4px 21px;
+            }
+        }
+    }
+    .eventImg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        border-radius: 30px;
+    }
+    .flag {
+        float: right;
+        display: none;
+    }
+    .options {
+        margin: 1%;
+        padding: 2%;
+        @include flex-mixin(row, unset, unset);
+        float: right;
+    }
+    }
+    //property to expand
+    .card:hover,
+    .card:focus,
+    .card:active {
+        .overlay {
+            opacity: 0.6;
+        }
+        .eventDesc {
+            white-space: normal;
+            -webkit-line-clamp: unset;
+        }
+        // transform: scale(1.1);
+        height: 500px;
+    }
+//property to expand ends
+
+._liked {
+    color: #f44336;
+    &:hover {
+        color: #d3190b;
+    }
+}
+
+// when event is not liked styles
+._notliked {
+    color: $color-black-shade-1;
+}
+
+// like counter styles
+.like-counter{
+    color: $color-white-shade-7;
+}

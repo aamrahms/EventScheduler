@@ -1,0 +1,28 @@
+// Flexbox mixin to avoid repeating and add dynamic value
+@mixin flex-mixin($flex-direction, $justify-content, $align-items) {
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+// mixin for custom font size
+@mixin custom-fs($size) {
+    font-size: $size;
+}
+
+// button default style
+%default-btn-style {
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+    padding: 5px 25px;
+    font-size: 13px;
+    line-height: 1.5;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #00000000;
+    transition: color 0.10s ease-in-out,
+    background-color 0.10s ease-in-out,
+}

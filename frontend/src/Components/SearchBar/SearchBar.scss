@@ -1,0 +1,25 @@
+@import '../../Utils/Design-Tokens/CommonScssUtil.scss';
+.searchBar {
+    display: flex;
+    align-items: center;
+    input {
+        padding: 2px 10px;
+        border: 1px solid $navbar-gradiant-shade;
+        border-radius: 10px;
+        outline-color: $navbar-header-shade;
+        width: 100%;
+        font-size: fontSize(small, s14);
+    }
+    .searchBtn{
+        svg {
+            transform: rotate(0.25turn);
+            color: #ffffff;
+            margin: 0px 6px;
+            font-size: fontSize(large, l20);
+            margin-top: 4px;
+            &:hover, &:active, &:focus{
+                color: $navbar-search-icon-hover;
+            }
+        }
+    }
+}

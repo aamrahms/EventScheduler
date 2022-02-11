@@ -1,0 +1,98 @@
+@import '../../../Utils/Design-Tokens/CommonScssUtil.scss';
+
+// styles for input fieldset
+.column_fieldset {
+    margin-bottom: 10px;
+    position: relative;
+    // flex mixin for setting flexbox styles
+    @include flex-mixin(column, unset, unset);
+    // input field labels
+    label {
+        font-size: fontSize(small, s13);
+        font-weight: 500;
+        color: $color-grey-shade-6;
+        position: absolute;
+        top: 9px;
+        background: $color-white-shade-1;
+        left: 13px;
+        padding: 0px 5px 0px 5px;
+    }
+    // style for form input fields
+    input {
+        padding: 10px;
+        border: 1px solid $color-grey-shade-2;
+        border-radius: 10px;
+        outline-color: #ecd9b9;
+        width: 100%;
+        margin-top: 20px;
+        &.is-invalid-input {
+            border: 1px solid $signup-form-invalid-input;
+        }
+    }
+    // image upload profile styles
+    .profileImg {
+        width: 115px;
+        height: 110px;
+        border: 1px solid $signup-profileimg-shade-1;
+        border-radius: 70px;
+        object-fit: cover;
+        object-position: top;
+    }
+}
+
+// this is displayed when error
+.error_message {
+    padding: 20px;
+    border: 1px solid $signup-form-error-msg;
+    border-radius: 15px;
+    background: $signup-form-error-msg;
+    color: $color-white-shade-1;
+    margin-bottom: 20px;
+}
+
+// submit buttom wrapper styles
+.btn_wrapper {
+    padding: 10px 0;
+    @include flex-mixin(row, flex-end, center);
+    ._orSeparator {
+        font-size: fontSize(small, s12);
+        color: $signup-separator;
+    }
+    // button styles which inherits from default-btn-style
+    button {
+        // inheritance
+        @extend %default-btn-style;
+        color: $color-white-shade-1;
+        background-color: $blue-shade-1;
+        border-color: $blue-shade-1;
+        vertical-align: middle;
+        font-size: fontSize(small, s13);
+        text-transform: uppercase;
+        padding: 10px 25px;
+        &:disabled, &[disabled] {
+            border: 1px solid $signup-btn-disabled-border;
+            background-color: $signup-btn-disabled;
+            color: #666666;
+        }
+    }
+    // google login button styles
+    .googleLogin {
+        >div {
+            padding: 8px !important;
+        }
+        >span {
+            padding: 8px 10px 8px 0px !important;
+        }
+    }
+}
+
+// if no account present, use this style
+.noAccount {
+    text-align: right;
+    font-size: fontSize(small, s14);
+    color: #757575;
+    margin: 10px 0;
+    button {
+        color: $blue-shade-4;
+    }
+}
